@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregunta } from '../pregunta.model';
+import { PreguntasService } from '../preguntas.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,16 +8,13 @@ import { Pregunta } from '../pregunta.model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  preguntas:Pregunta[]=[]
 
-  preguntas:Pregunta[]=[
-    new Pregunta("caariasg2","calculo","Cuanto es 1+1",'2',{"opcion1":3,"opcion2":4,"opcion3":5,"opcion4":2}),
-    new Pregunta("mirevalo","calculo","Cuanto es 1+1",'2',{"opcion1":3,"opcion2":4,"opcion3":5,"opcion4":2})
-  ]
-
-
-  constructor() { }
+  constructor(private servicioPreguntas:PreguntasService) { 
+    this.preguntas=this.servicioPreguntas.preguntas
+  }
 
   ngOnInit(): void {
   }
-
+  
 }

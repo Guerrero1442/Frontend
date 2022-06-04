@@ -7,8 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
-import { CrearPreguntaComponent } from './crear-pregunta/crear-pregunta.component';
-import { ActualizarPreguntaComponent } from './actualizar-pregunta/actualizar-pregunta.component';
+import { PreguntasService } from './preguntas.service';
+import { CrearpreguntaComponent } from './crearpregunta/crearpregunta.component';
+import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunta.component';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,16 @@ import { ActualizarPreguntaComponent } from './actualizar-pregunta/actualizar-pr
     LoginComponent,
     DashboardComponent,
     PreguntasComponent,
-    CrearPreguntaComponent,
-    ActualizarPreguntaComponent
+    CrearpreguntaComponent,
+    ActualizapreguntaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [],
+  providers: [PreguntasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

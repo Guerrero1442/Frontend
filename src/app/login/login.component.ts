@@ -16,6 +16,6 @@ export class LoginComponent implements OnInit {
   irDashboard(){
     this.router.navigate(['dashboard'])
   }
-
+  username:string="prueba"
 
 }
