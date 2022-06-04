@@ -10,6 +10,7 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
 import { PreguntasService } from './preguntas.service';
 import { CrearpreguntaComponent } from './crearpregunta/crearpregunta.component';
 import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunta.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunt
     FormsModule,
 
   ],
-  providers: [PreguntasService],
+  providers: [PreguntasService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

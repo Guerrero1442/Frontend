@@ -2,6 +2,7 @@
     class="container-fluid bg-light d-flex flex-column justify-content-center align-items-center"
     style="height: 100vh"
 >
+    <h1>{{ index }}</h1>
     <div style="width: 30%" class="div bg-secondary text-center p-3">
         <h4>Periodo</h4>
     </div>
@@ -10,7 +11,13 @@
         style="width: 30%"
     >
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Username" />
+            <input
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="Username"
+                [(ngModel)]="capturaUsername"
+            />
             <label for="floatingInput">Username</label>
         </div>
         <div class="form-floating">
@@ -19,6 +26,7 @@
                 class="form-control"
                 id="floatingPassword"
                 placeholder="Password"
+                [(ngModel)]="capturaPassword"
             />
             <label for="floatingPassword">Password</label>
         </div>

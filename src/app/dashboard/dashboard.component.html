@@ -24,10 +24,21 @@
             <p class="card-text">
                 {{ pregunta.respuesta }}
             </p>
-            <a href="#" [routerLink]="['/actualizaPregunta', indice]" class="btn btn-primary"
+            <a
+                href="#"
+                [routerLink]="['/actualizaPregunta', indice]"
+                [queryParams]="{ id_user: index }"
+                class="btn btn-primary"
                 >Editar</a
             >
             <!-- <a href="#" class="btn btn-danger m-2">Eliminar</a> -->
         </div>
     </div>
 </div>
+<a
+    href=""
+    class="btn btn-primary"
+    [routerLink]="['/nuevaPregunta']"
+    [queryParams]="{ id_user: index }"
+    >Crear pregunta</a
+>

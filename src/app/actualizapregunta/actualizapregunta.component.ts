@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pregunta } from '../pregunta.model';
 import { PreguntasService } from '../preguntas.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-actualizapregunta',
@@ -10,11 +11,12 @@ import { PreguntasService } from '../preguntas.service';
 })
 export class ActualizapreguntaComponent implements OnInit {
 
-  constructor(private servicioPreguntas:PreguntasService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private servicioPreguntas:PreguntasService,private router:Router,private route:ActivatedRoute,private userService:UserService) { }
 
   ngOnInit(): void {
     this.indice=this.route.snapshot.params['id']
-    let pregunta:Pregunta=this.servicioPreguntas.encontrarPregunta(this.indice)
+    this.index=this.route.snapshot.queryParams['id_user']
+    let pregunta:Pregunta=this.servicioPreguntas.encontrarPregunta(this.userService.encontrarUsarioUsername(this.index),this.indice)
     this.cuadroUsername=pregunta.creador
     this.cuadroMateria=pregunta.materia
     this.cuadroEnunciado=pregunta.enunciado
@@ -39,7 +41,7 @@ export class ActualizapreguntaComponent implements OnInit {
   cuadroOpcion3:string=""
   cuadroOpcion4:string=""
   respuestaCorrecta:string=""
-
+  index:number
   indice:number
 
   actualizaPregunta(){

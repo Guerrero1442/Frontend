@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pregunta } from '../pregunta.model';
 import { PreguntasService } from '../preguntas.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-crearpregunta',
@@ -9,9 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./crearpregunta.component.css']
 })
 export class CrearpreguntaComponent implements OnInit {
-  constructor(private servicioPreguntas:PreguntasService,private router:Router) { }
+  constructor(private servicioPreguntas:PreguntasService,private router:Router,private route:ActivatedRoute,private userService:UserService) { }
 
   ngOnInit(): void {
+    this.index=this.route.snapshot.queryParams['id_user']
+    this.cuadroUsername=this.userService.encontrarUsarioUsername(this.index)
   }
   elegirRptCorrecta(event:Event){
     if((<HTMLInputElement>event.target).value == 'opcion1'){
@@ -25,7 +28,8 @@ export class CrearpreguntaComponent implements OnInit {
       this.respuestaCorrecta=this.cuadroOpcion4
     }
   }
-  cuadroUsername:string="hola"
+  index:number
+  cuadroUsername:string
   cuadroMateria:string=""
   cuadroEnunciado:string=""
   cuadroOpcion1:string=""

@@ -25,24 +25,21 @@
                         class="form-control"
                         id="floatingInputGrid"
                         placeholder="username"
+                        disabled="true"
                     />
                     <label for="floatingInputGrid">Username</label>
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-floating">
-                    <select
-                        class="form-select"
-                        id="floatingSelectGrid"
-                        aria-label="Floating label select example"
+                    <input
+                        type="text"
                         [(ngModel)]="cuadroMateria"
-                    >
-                        <option selected>Open this select menu</option>
-                        <option value="1">Calculo</option>
-                        <option value="2">ingSoftware</option>
-                        <option value="3">Geografia</option>
-                    </select>
-                    <label for="floatingSelectGrid">Materia</label>
+                        class="form-control"
+                        id="floatingInputGrid"
+                        placeholder="username"
+                    />
+                    <label for="floatingInputGrid">Materia</label>
                 </div>
             </div>
         </div>
