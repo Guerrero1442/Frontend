@@ -11,6 +11,8 @@ import { PreguntasService } from './preguntas.service';
 import { CrearpreguntaComponent } from './crearpregunta/crearpregunta.component';
 import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunta.component';
 import { UserService } from './user.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,14 @@ import { UserService } from './user.service';
     DashboardComponent,
     PreguntasComponent,
     CrearpreguntaComponent,
-    ActualizapreguntaComponent
+    ActualizapreguntaComponent,
+    UsermodelComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
+    HttpClientModule
   ],
   providers: [PreguntasService,UserService],
   bootstrap: [AppComponent]
