@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Question;
+import com.example.demo.model.User;
 import com.example.demo.repository.QuestionRepository;
 
 @CrossOrigin(origins = "http://127.0.0.1:4200")
@@ -43,5 +45,24 @@ public class QuestionController {
 		return questionRepository.saveAll(questions);
 	}
 	
+	@PutMapping("/Questions/{id}")
+	public Question updateQuestion(@PathVariable String id, @RequestBody Question question) {
+		
+		Question _Question = questionRepository.findById(id).get();
+		
+		_Question.setSubject(question.getSubject());
+		_Question.setAutor(question.getAutor());
+		_Question.setOptionA(question.getOptionA());
+		_Question.setOptionB(question.getOptionB());
+		_Question.setOptionC(question.getOptionC());
+		_Question.setOptionD(question.getOptionD());
+		_Question.setAnswer(question.getAnswer());
+		_Question.setSustentation(question.getSustentation());
+	
+		
+		questionRepository.save(_Question);
+		
+		return _Question;
+	}
 
 }
