@@ -60,6 +60,7 @@ public class QuestionController {
 		_Question.setOptionD(question.getOptionD());
 		_Question.setAnswer(question.getAnswer());
 		_Question.setSustentation(question.getSustentation());
+		_Question.setStatement(question.getStatement());
 	
 		
 		questionRepository.save(_Question);

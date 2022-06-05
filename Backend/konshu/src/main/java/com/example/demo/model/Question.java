@@ -11,6 +11,7 @@ public class Question {
 
 
 	private String Subject;
+	private String Statement;
 	private String Autor;
 	private String OptionA;
 	private String OptionB;
@@ -23,11 +24,11 @@ public class Question {
 		
 	}
 
-	public Question(String subject, String autor, String optionA, String optionB, String optionC,
+	public Question(String subject, String statement, String autor, String optionA, String optionB, String optionC,
 			String optionD, String answer, String sustentation) {
 		super();
-
 		Subject = subject;
+		Statement = statement;
 		Autor = autor;
 		OptionA = optionA;
 		OptionB = optionB;
@@ -37,13 +38,20 @@ public class Question {
 		Sustentation = sustentation;
 	}
 
-
 	public String getSubject() {
 		return Subject;
 	}
 
 	public void setSubject(String subject) {
 		Subject = subject;
+	}
+
+	public String getStatement() {
+		return Statement;
+	}
+
+	public void setStatement(String statement) {
+		Statement = statement;
 	}
 
 	public String getAutor() {
@@ -101,8 +109,7 @@ public class Question {
 	public void setSustentation(String sustentation) {
 		Sustentation = sustentation;
 	}
-	
-	
+
 	
 
 
