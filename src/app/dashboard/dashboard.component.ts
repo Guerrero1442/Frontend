@@ -15,12 +15,11 @@ export class DashboardComponent implements OnInit {
   index:number
   
   constructor(private servicioPreguntas:PreguntaServiceService,private route:ActivatedRoute,private servicioUsuario:UserService) { 
-    // this.preguntas=this.servicioPreguntas.preguntas
   }
 
   ngOnInit(): void {
-    // this.index=this.route.snapshot.queryParams['id_user']
-    // this.preguntas=this.servicioPreguntas.userPreguntas(this.servicioUsuario.encontrarUsarioUsername(this.index))
+     this.index=this.route.snapshot.queryParams['id_user']
+     //this.preguntas=this.servicioPreguntas.userPreguntas(this.servicioUsuario.encontrarUsarioUsername(this.index))
   }
   
 }

@@ -10,9 +10,8 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
 
 import { CrearpreguntaComponent } from './crearpregunta/crearpregunta.component';
 import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunta.component';
-import { UserService } from './user.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { PreguntaServiceService } from './Services/Pregunta/pregunta-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -29,9 +28,10 @@ import { PreguntaServiceService } from './Services/Pregunta/pregunta-service.ser
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
-  providers: [PreguntaServiceService,UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

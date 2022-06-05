@@ -1,109 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a href="dashboard" class="navbar-brand">Periodo</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="" class="nav-link">Tus preguntas</a>
-            </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">Tus examenes</a>
-            </li>
-        </ul>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Mi lista de preguntas</h3>
+
+            <div *ngFor="let pregunta of preguntas" class="card mb-3">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div class="fw-bold">{{pregunta.subject}} </div>   
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="fw-bold">{{pregunta.autor}} </div>    
+                    </div>
+                </div>     
+            </div>
+        </div>
     </div>
-</nav>
-<div
-    class="container-fluid bg-secondary p-5 d-flex flex-column align-items-center justify-content-center"
-    style="height: 100vh"
->
-    <div style="width: 70%; height: auto" class="form">
-        <div class="row g-2">
-            <div class="col-md">
-                <div class="form-floating">
-                    <input
-                        type="text"
-                        [(ngModel)]="cuadroUsername"
-                        class="form-control"
-                        id="floatingInputGrid"
-                        placeholder="username"
-                        disabled="true"
-                    />
-                    <label for="floatingInputGrid">Username</label>
-                </div>
+    <div class="col-md-6">
+        <h3>Nueva Pregunta</h3>
+        <form class="mt-5" (ngSubmit)="create()">
+            <div class="mb-3 form-floating">
+                <input type="text" id="subject" placeholder="subject" name="subject" class="form-control" [(ngModel)]="pregunta.Subject">
+                <label for="subject">Subject</label>
             </div>
-            <div class="col-md">
-                <div class="form-floating">
-                    <input
-                        type="text"
-                        [(ngModel)]="cuadroMateria"
-                        class="form-control"
-                        id="floatingInputGrid"
-                        placeholder="username"
-                    />
-                    <label for="floatingInputGrid">Materia</label>
-                </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="autor" placeholder="autor" name="autor" class="form-control" [(ngModel)]="pregunta.Autor">
+                <label for="subject">Autor</label>
             </div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Enunciado</label>
-            <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                [(ngModel)]="cuadroEnunciado"
-                rows="3"
-            ></textarea>
-        </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                value="opcion1"
-                
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion1" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                value="opcion2"
-                
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion2" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                value="opcion3"
-                
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion3" />
-            </label>
-        </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                value="opcion4"
-                
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion4" />
-            </label>
-        </div>
-        <button type="submit" class="btn btn-primary m-3" (click)="agregaPregunta()">Crear</button>
+            <div class="mb-3 form-floating">
+                <input type="text" id="optionA" placeholder="optionA" name="optionA" class="form-control" [(ngModel)]="pregunta.OptionA">
+                <label for="subject">OptionA</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="optionB" placeholder="optionB" name="optionB" class="form-control" [(ngModel)]="pregunta.OptionB">
+                <label for="subject">OptionB</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="optionC" placeholder="optionC" name="optionC" class="form-control" [(ngModel)]="pregunta.OptionC">
+                <label for="subject">OptionC</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="optionD" placeholder="optionD" name="optionD" class="form-control" [(ngModel)]="pregunta.OptionD">
+                <label for="subject">OptionD</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="answer" placeholder="answer" name="answer" class="form-control" [(ngModel)]="pregunta.Answer">
+                <label for="subject">Answer</label>
+            </div>
+            <div class="mb-3 form-floating">
+                <input type="text" id="sustentation" placeholder="sustentation" name="sustentation" class="form-control" [(ngModel)]="pregunta.Sustentation">
+                <label for="subject">Sustentation</label>
+            </div>
+            <div class="text-end">
+                <button class="btn btn-primary btn-lg">Guardar</button>
+            </div>
+
+        </form>
     </div>
 </div>
