@@ -10,44 +10,40 @@ import { UserService } from '../user.service';
   styleUrls: ['./crearpregunta.component.css']
 })
 export class CrearpreguntaComponent implements OnInit {
- preguntas: any[] = [];
-  pregunta = {
-      Subject:"",
-      Autor: "",
-      OptionA: "",
-      OptionB:"",
-      OptionC:"",
-      OptionD:"",
-      Answer:"",
-      Sustentation:"" ,
-  }
- constructor(
-   private pregutaservice: PreguntaServiceService
- ){}
-  
+  constructor(private servicioPreguntas:PreguntaServiceService,private router:Router,private route:ActivatedRoute,private userService:UserService) { }
+
   ngOnInit(): void {
-   this.getAll();
+    this.index=this.route.snapshot.queryParams['id_user']
+    this.cuadroUsername=this.userService.encontrarUsarioUsername(this.index)
   }
+   elegirRptCorrecta(event:Event){
+    if((<HTMLInputElement>event.target).value == 'opcion1'){
+       this.respuestaCorrecta=this.cuadroOpcion1
 
-  getAll(){
-    this.pregutaservice.getAll()
-    .subscribe((data:any) => this.preguntas = data);
-  }
-  create(){
-    this.pregutaservice.create(this.pregunta)
-    .subscribe(()=> this.getAll()
-    );
+    }else if((<HTMLInputElement>event.target).value == 'opcion2'){
+      this.respuestaCorrecta=this.cuadroOpcion2
+     }else if((<HTMLInputElement>event.target).value == 'opcion3'){
+       this.respuestaCorrecta=this.cuadroOpcion3
+     }else{
+       this.respuestaCorrecta=this.cuadroOpcion4
+     }
+   }
+  index:number
+  cuadroUsername:string="www"
+  cuadroMateria:string="www"
+  cuadroEnunciado:string="www"
+  cuadroOpcion1:string="www"
+  cuadroOpcion2:string="www"
+  cuadroOpcion3:string="www"
+  cuadroOpcion4:string="www"
+  respuestaCorrecta:string="www"
+  sustentacion:string="www"
 
-    this.pregunta = {
-      Subject:"",
-      Autor: "",
-      OptionA: "",
-      OptionB:"",
-      OptionC:"",
-      OptionD:"",
-      Answer:"",
-      Sustentation:"" ,
-    }
+  agregaPregunta(){
+    let nuevaPregunta=new Preguntamodel(this.cuadroMateria,this.cuadroUsername,this.cuadroOpcion1,this.cuadroOpcion2,this.cuadroOpcion3,this.cuadroOpcion4,this.respuestaCorrecta,this.sustentacion)
+    console.log(nuevaPregunta)
+    this.servicioPreguntas.create(nuevaPregunta).subscribe(data=>{console.log(nuevaPregunta)},error=>{alert("error")});
+    this.router.navigate(['dashboard'])
   }
   
 } 

@@ -27,5 +27,10 @@ export class PreguntaServiceService {
   update(id: string, data: any) {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
-
+  getbyautor(autor:String){
+    return this.http.get(`${baseUrl}/${autor}`);
+  }
+  delete(id: string){
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
 }

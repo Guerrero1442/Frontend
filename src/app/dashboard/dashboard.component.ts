@@ -11,15 +11,33 @@ import { UserService } from '../user.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  preguntas:Preguntamodel[]=[]
-  index:number
+  preguntas: any[] = [];
+  pregunta = {
+      Subject:"",
+      Statement:"",
+      Autor: "",
+      OptionA: "",
+      OptionB:"",
+      OptionC:"",
+      OptionD:"",
+      Answer:"",
+      Sustentation:""  ,
+  }
+ constructor(
+   private pregutaservice: PreguntaServiceService
+ ){}
   
-  constructor(private servicioPreguntas:PreguntaServiceService,private route:ActivatedRoute,private servicioUsuario:UserService) { 
+  ngOnInit(): void {
+   this.getAll();
   }
 
-  ngOnInit(): void {
-     this.index=this.route.snapshot.queryParams['id_user']
-     //this.preguntas=this.servicioPreguntas.userPreguntas(this.servicioUsuario.encontrarUsarioUsername(this.index))
+  getAll(){
+    this.pregutaservice.getAll()
+    .subscribe((data:any) => this.preguntas = data);
   }
-  
+  delete(pregunta: any){
+    this.pregutaservice.delete(pregunta.id)
+    .subscribe(() => this.getAll);
+
+  }
 }

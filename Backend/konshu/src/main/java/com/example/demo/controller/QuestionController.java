@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,7 +47,12 @@ public class QuestionController {
 	public List<Question> saveListQuestions(@RequestBody List<Question> questions) {
 		return questionRepository.saveAll(questions);
 	}
-	
+	@DeleteMapping("/Question/{id}")
+	public Question deleteCustomerById(@PathVariable String id) {
+		Question  _question = questionRepository.findById(id).get();
+		questionRepository.deleteById(id);
+		return _question;
+	}
 	@PutMapping("/Questions/{id}")
 	public Question updateQuestion(@PathVariable String id, @RequestBody Question question) {
 		
@@ -66,6 +72,10 @@ public class QuestionController {
 		questionRepository.save(_Question);
 		
 		return _Question;
+	}
+	@GetMapping("/Questions/{autor}")
+	public List<Question> findQuestionByAutor(@PathVariable String autor){
+		return questionRepository.findQuestionByAutor(autor);
 	}
 
 }

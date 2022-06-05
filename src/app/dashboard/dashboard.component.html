@@ -18,16 +18,31 @@
     style="width: 70%"
 >
     <div class="card">
-        <div class="card-header">{{ pregunta.materia }}</div>
+        <div class="card-header">{{pregunta.subject}}</div>
         <div class="card-body">
-            <h5 class="card-title">{{ pregunta.enunciado }}</h5>
+            <h5 class="card-title">{{pregunta.statement}}</h5>
             <p class="card-text">
-                {{ pregunta.respuesta }}
+                {{ pregunta.autor }}
             </p>
+            <p class="card-text">
+                {{ pregunta.optionA }}
+            </p>
+            <p class="card-text">
+                {{ pregunta.optionB }}
+            </p>
+            <p class="card-text">
+                {{ pregunta.optionC }}
+            </p>
+            <p class="card-text">
+                {{ pregunta.optionD }}
+            </p>
+            <p class="card-text">
+                {{ pregunta.answer }}
+            </p>
+
             <a
                 href="#"
                 [routerLink]="['/actualizaPregunta', indice]"
-                [queryParams]="{ id_user: index }"
                 class="btn btn-primary"
                 >Editar</a
             >
@@ -39,6 +54,5 @@
     href=""
     class="btn btn-primary"
     [routerLink]="['/nuevaPregunta']"
-    [queryParams]="{ id_user: index }"
     >Crear pregunta</a
 >

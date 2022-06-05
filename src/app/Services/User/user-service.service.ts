@@ -28,4 +28,5 @@ export class UserServiceService {
   update(id: string, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
+  
 }
