@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pregunta } from '../pregunta.model';
-import { PreguntasService } from '../preguntas.service';
+import { Preguntamodel } from '../Models/Preguntamodel/preguntamodel';
+import { PreguntaServiceService } from '../Services/Pregunta/pregunta-service.service';
+
 import { UserService } from '../user.service';
 
 @Component({
@@ -10,16 +11,16 @@ import { UserService } from '../user.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  preguntas:Pregunta[]=[]
+  preguntas:Preguntamodel[]=[]
   index:number
   
-  constructor(private servicioPreguntas:PreguntasService,private route:ActivatedRoute,private servicioUsuario:UserService) { 
+  constructor(private servicioPreguntas:PreguntaServiceService,private route:ActivatedRoute,private servicioUsuario:UserService) { 
     // this.preguntas=this.servicioPreguntas.preguntas
   }
 
   ngOnInit(): void {
-    this.index=this.route.snapshot.queryParams['id_user']
-    this.preguntas=this.servicioPreguntas.userPreguntas(this.servicioUsuario.encontrarUsarioUsername(this.index))
+    // this.index=this.route.snapshot.queryParams['id_user']
+    // this.preguntas=this.servicioPreguntas.userPreguntas(this.servicioUsuario.encontrarUsarioUsername(this.index))
   }
   
 }

@@ -9,8 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Question {
 
-	@Id
-	private int id;
+
 	private String Subject;
 	private String Autor;
 	private String OptionA;
@@ -24,10 +23,10 @@ public class Question {
 		
 	}
 
-	public Question(int id, String subject, String autor, String optionA, String optionB, String optionC,
+	public Question(String subject, String autor, String optionA, String optionB, String optionC,
 			String optionD, String answer, String sustentation) {
 		super();
-		this.id = id;
+
 		Subject = subject;
 		Autor = autor;
 		OptionA = optionA;
@@ -38,13 +37,6 @@ public class Question {
 		Sustentation = sustentation;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getSubject() {
 		return Subject;

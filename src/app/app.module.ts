@@ -7,12 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
-import { PreguntasService } from './preguntas.service';
+
 import { CrearpreguntaComponent } from './crearpregunta/crearpregunta.component';
 import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunta.component';
 import { UserService } from './user.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.component';
+import { PreguntaServiceService } from './Services/Pregunta/pregunta-service.service';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,6 @@ import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.co
     PreguntasComponent,
     CrearpreguntaComponent,
     ActualizapreguntaComponent,
-    UsermodelComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,7 @@ import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.co
     FormsModule,
     HttpClientModule
   ],
-  providers: [PreguntasService,UserService],
+  providers: [PreguntaServiceService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

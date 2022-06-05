@@ -16,7 +16,7 @@ import com.example.demo.model.Question;
 import com.example.demo.model.User;
 import com.example.demo.repository.QuestionRepository;
 
-@CrossOrigin(origins = "http://127.0.0.1:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 
 @RestController // Defines that this class is a spring bean
 @RequestMapping("/api/v1/")
@@ -37,7 +37,9 @@ public class QuestionController {
 	
 	@PostMapping("/Questions")
 	public Question saveQuestion(@RequestBody Question question){
+		System.out.println(question);
 		return questionRepository.save(question);
+		
 	}
 	
 	@PostMapping("/QuestionList")

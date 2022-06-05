@@ -21,7 +21,9 @@ export class PreguntaServiceService {
     return this.http.get<Preguntamodel>(`${baseUrl2}/${id}`);
   }
   create(data: any): Observable<any> {
+    console.log(data);
     return this.http.post(baseUrl, data);
+
   }
   update(id: string, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
