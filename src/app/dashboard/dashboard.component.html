@@ -18,24 +18,32 @@
     style="width: 70%"
 >
     <div class="card">
-        <div class="card-header">{{pregunta.subject}}</div>
+        
+        <div class="card-header"> {{pregunta.subject}}</div>
         <div class="card-body">
+            <p>Enunciado:</p>
             <h5 class="card-title">{{pregunta.statement}}</h5>
+            <p>Autor:</p>
             <p class="card-text">
                 {{ pregunta.autor }}
             </p>
+            <p>Opcion A:</p>
             <p class="card-text">
                 {{ pregunta.optionA }}
             </p>
+            <p>Opcion B:</p>
             <p class="card-text">
                 {{ pregunta.optionB }}
             </p>
+            <p>Opcion C:</p>
             <p class="card-text">
                 {{ pregunta.optionC }}
             </p>
+            <p>Opcion D:</p>
             <p class="card-text">
                 {{ pregunta.optionD }}
             </p>
+            <p>Respuesta:</p>
             <p class="card-text">
                 {{ pregunta.answer }}
             </p>
