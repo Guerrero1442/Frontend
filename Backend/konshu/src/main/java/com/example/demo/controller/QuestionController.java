@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +17,7 @@ import com.example.demo.model.Question;
 import com.example.demo.model.User;
 import com.example.demo.repository.QuestionRepository;
 
-@CrossOrigin(origins = "http://127.0.0.1:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 
 @RestController // Defines that this class is a spring bean
 @RequestMapping("/api/v1/")
@@ -37,14 +38,21 @@ public class QuestionController {
 	
 	@PostMapping("/Questions")
 	public Question saveQuestion(@RequestBody Question question){
+		System.out.println(question);
 		return questionRepository.save(question);
+		
 	}
 	
 	@PostMapping("/QuestionList")
 	public List<Question> saveListQuestions(@RequestBody List<Question> questions) {
 		return questionRepository.saveAll(questions);
 	}
-	
+	@DeleteMapping("/Question/{id}")
+	public Question deleteCustomerById(@PathVariable String id) {
+		Question  _question = questionRepository.findById(id).get();
+		questionRepository.deleteById(id);
+		return _question;
+	}
 	@PutMapping("/Questions/{id}")
 	public Question updateQuestion(@PathVariable String id, @RequestBody Question question) {
 		
@@ -58,11 +66,16 @@ public class QuestionController {
 		_Question.setOptionD(question.getOptionD());
 		_Question.setAnswer(question.getAnswer());
 		_Question.setSustentation(question.getSustentation());
+		_Question.setStatement(question.getStatement());
 	
 		
 		questionRepository.save(_Question);
 		
 		return _Question;
+	}
+	@GetMapping("/Questions/{autor}")
+	public List<Question> findQuestionByAutor(@PathVariable String autor){
+		return questionRepository.findQuestionByAutor(autor);
 	}
 
 }

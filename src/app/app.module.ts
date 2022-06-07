@@ -34,7 +34,7 @@ import { ResponderExamenComponent } from './responder-examen/responder-examen.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [PreguntaServiceService,UserServiceService,ExamServiceService],
   bootstrap: [AppComponent]

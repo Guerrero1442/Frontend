@@ -5,13 +5,14 @@ import java.util.Map;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection = "Questions")
 
+
+@Document(collection = "Questions")
 public class Question {
 
-	@Id
-	private int id;
+	
 	private String Subject;
+	private String Statement;
 	private String Autor;
 	private String OptionA;
 	private String OptionB;
@@ -24,11 +25,11 @@ public class Question {
 		
 	}
 
-	public Question(int id, String subject, String autor, String optionA, String optionB, String optionC,
+	public Question(String subject, String statement, String autor, String optionA, String optionB, String optionC,
 			String optionD, String answer, String sustentation) {
 		super();
-		this.id = id;
 		Subject = subject;
+		Statement = statement;
 		Autor = autor;
 		OptionA = optionA;
 		OptionB = optionB;
@@ -38,20 +39,20 @@ public class Question {
 		Sustentation = sustentation;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getSubject() {
 		return Subject;
 	}
 
 	public void setSubject(String subject) {
 		Subject = subject;
+	}
+
+	public String getStatement() {
+		return Statement;
+	}
+
+	public void setStatement(String statement) {
+		Statement = statement;
 	}
 
 	public String getAutor() {
@@ -109,8 +110,7 @@ public class Question {
 	public void setSustentation(String sustentation) {
 		Sustentation = sustentation;
 	}
-	
-	
+
 	
 
 

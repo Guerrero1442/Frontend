@@ -45,4 +45,5 @@ export class CrearpreguntaComponent implements OnInit {
     this.servicioPreguntas.agregarPregunta(nuevaPregunta)
     this.router.navigate(['dashboard'],{queryParams:{id_user: this.index}})
   }
-}
+  
+} 

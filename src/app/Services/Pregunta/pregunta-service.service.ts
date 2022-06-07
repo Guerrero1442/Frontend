@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Preguntamodel } from 'src/app/Models/Preguntamodel/preguntamodel';
-
 
 // const baseUrl = 'http://localhost:8080/api/v1/Questions';
 // const baseUrl2 = 'http://localhost:8080/api/v1/Question';
