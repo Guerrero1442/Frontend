@@ -17,10 +17,10 @@ export class ActualizapreguntaComponent implements OnInit {
   ngOnInit(): void {
     this.indice=this.route.snapshot.params['id']
     this.index=this.route.snapshot.queryParams['id_user']
-    let pregunta:Preguntamodel=this.servicioPreguntas.encontrarPregunta(this.userService.encontrarUsarioUsername(this.index),this.indice)
-    this.cuadroUsername=pregunta.Autor
-    this.cuadroMateria=pregunta.Subject
-    this.cuadroEnunciado=pregunta.Enunciado
+    //let pregunta:Preguntamodel=this.servicioPreguntas.encontrarPregunta(this.userService.encontrarUsarioUsername(this.index),this.indice)
+    // this.cuadroUsername=pregunta.Autor
+    // this.cuadroMateria=pregunta.Subject
+    // this.cuadroEnunciado=pregunta.Enunciado
   }
   elegirRptCorrecta(event:Event){
     if((<HTMLInputElement>event.target).value == 'opcion1'){

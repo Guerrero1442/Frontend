@@ -16,7 +16,7 @@ export class CrearExamenComponent implements OnInit {
   constructor(private serviciPreguntas:PreguntaServiceService,private route:ActivatedRoute,private userService:UserServiceService,private examService:ExamServiceService, private router:Router) { }
 
   ngOnInit(): void {
-    this.preguntas=this.serviciPreguntas.preguntas
+    //this.preguntas=this.serviciPreguntas.preguntas
   }
   cuadroUsername:string=""
   cuadroMateria:string=""
@@ -29,7 +29,7 @@ export class CrearExamenComponent implements OnInit {
   contador:number=5
 
   agregarPreguntaExam(indice:number){
-    this.preguntasExam.push(this.serviciPreguntas.encontrarPreguntaIndice(indice))
+    //this.preguntasExam.push(this.serviciPreguntas.encontrarPreguntaIndice(indice))
     this.contador=this.contador - 1 
   }
 

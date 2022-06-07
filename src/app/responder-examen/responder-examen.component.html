@@ -12,7 +12,7 @@
         class="form p-4 rounded border border-1"
     >
         <div class="mb-3">
-            <p>{{ pregunta.Enunciado }}</p>
+            <p>{{ pregunta.statement }}</p>
         </div>
         <div class="form-check">
             <input
@@ -25,7 +25,7 @@
                 (click)="elegirRptCorrecta($event, indice)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                {{ pregunta.OptionA }}
+                {{ pregunta.optionA }}
             </label>
         </div>
         <div class="form-check">
@@ -39,7 +39,7 @@
                 (click)="elegirRptCorrecta($event, indice)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                {{ pregunta.OptionB }}
+                {{ pregunta.optionB }}
             </label>
         </div>
         <div class="form-check">
@@ -53,7 +53,7 @@
                 (click)="elegirRptCorrecta($event, indice)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                {{ pregunta.OptionC }}
+                {{ pregunta.optionC }}
             </label>
         </div>
         <div class="form-check">
@@ -67,7 +67,7 @@
                 (click)="elegirRptCorrecta($event, indice)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                {{ pregunta.OptionD }}
+                {{ pregunta.optionD }}
             </label>
         </div>
         <div class="form-floating mt-3">

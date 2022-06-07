@@ -26,7 +26,6 @@ public class QuestionController {
 	QuestionRepository questionRepository;
 	
 	@GetMapping("/Questions")
-
 	public List<Question> getAllQuestions(){
 		return questionRepository.findAll();
 	}

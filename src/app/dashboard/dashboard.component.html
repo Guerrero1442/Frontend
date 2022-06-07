@@ -6,7 +6,7 @@
         <a href="dashboard" class="navbar-brand">Periodo</a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="" class="nav-link">Tus preguntas</a>
+                <a href="/dashboard" class="nav-link">Tus preguntas</a>
             </li>
             <li class="nav-item">
                 <a href="/tusexamenes" class="nav-link">Tus examenes</a>
@@ -26,11 +26,11 @@
 <div class="container" style="width: 40%; margin-top: 60px">
     <div class="col-9 my-3" *ngFor="let pregunta of preguntas; let indice = index">
         <div class="card">
-            <div class="card-header" style="background-color: #c6dce4">{{ pregunta.Subject }}</div>
+            <div class="card-header" style="background-color: #c6dce4">{{ pregunta.subject }}</div>
             <div class="card-body">
-                <h5 class="card-title">{{ pregunta.Enunciado }}</h5>
+                <h5 class="card-title">{{ pregunta.statement}}</h5>
                 <p class="card-text">
-                    {{ pregunta.Answer }}
+                    {{ pregunta.answer }}
                 </p>
                 <a
                     href="#"

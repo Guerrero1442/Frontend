@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.usuarios=this.userService.usuarios
   }
-  capturaUsername:string="caariasg2"
-  capturaPassword:string="1234"
+  capturaUsername:string="lhuer2"
+  capturaPassword:string="boca"
   // resultado:number=this.usuarios.findIndex(User => User === "lhuer2")
   index:number
   mensajeWarning:string=""

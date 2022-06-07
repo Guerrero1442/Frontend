@@ -26,13 +26,13 @@ export class ResponderExamenComponent implements OnInit {
   }
   elegirRptCorrecta(event:Event,indice:number){
     if((<HTMLInputElement>event.target).value == 'opcion1'){
-      this.preguntas[indice].Answer=this.preguntas[indice].OptionA
+      this.preguntas[indice].answer=this.preguntas[indice].optionA
     }else if((<HTMLInputElement>event.target).value == 'opcion2'){
-      this.preguntas[indice].Answer=this.preguntas[indice].OptionB
+      this.preguntas[indice].answer=this.preguntas[indice].optionB
     }else if((<HTMLInputElement>event.target).value == 'opcion3'){
-      this.preguntas[indice].Answer=this.preguntas[indice].OptionC
+      this.preguntas[indice].answer=this.preguntas[indice].optionC
     }else{
-      this.preguntas[indice].Answer=this.preguntas[indice].OptionD
+      this.preguntas[indice].answer=this.preguntas[indice].optionD
     }
   }
 
@@ -48,7 +48,7 @@ export class ResponderExamenComponent implements OnInit {
   cuadroSustentacion:string=""
 
   datosRespuesta(indice:number){
-    this.preguntas[indice].Sustentation=this.cuadroSustentacion
+    this.preguntas[indice].sustentation=this.cuadroSustentacion
   }
 
   agregaExamCalificado(){
