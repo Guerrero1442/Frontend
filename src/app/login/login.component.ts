@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../user.model';
-import { UserService } from '../user.service';
+import { Usermodel } from '../Models/Usuariomodel/usermodel';
+import { UserServiceService } from '../Services/User/user-service.service';
+
 
 @Component({
   selector: 'app-login',
@@ -11,27 +12,31 @@ import { UserService } from '../user.service';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router,private userService:UserService) { }
-  usuarios:User[]=[]
+  constructor(private router:Router,private userService:UserServiceService) { }
+  usuarios:Usermodel[]=[]
   ngOnInit(): void {
     this.usuarios=this.userService.usuarios
   }
-  capturaUsername:string="lhuer2"
-  capturaPassword:string="boca"
+  capturaUsername:string="caariasg2"
+  capturaPassword:string="1234"
   // resultado:number=this.usuarios.findIndex(User => User === "lhuer2")
   index:number
-
+  mensajeWarning:string=""
 
   irDashboard(){
-    this.index = this.usuarios.findIndex((user)=> user.username === this.capturaUsername)
+    this.index = this.usuarios.findIndex((user)=> user.Username === this.capturaUsername)
     if(this.index != 1){
-      if(this.usuarios[this.index].contraseña === this.capturaPassword){
-        this.router.navigate(['dashboard'],{queryParams:{id_user: this.index}})
+      if(this.usuarios[this.index].Password === this.capturaPassword){
+        if(this.userService.encontrarUsuarioRol(this.index) == 'estudiante'){
+          this.router.navigate(['tusexamenes'],{queryParams:{id_user: this.index,rol:this.userService.encontrarUsuarioRol(this.index)}})
+        }else{
+          this.router.navigate(['dashboard'],{queryParams:{id_user: this.index,rol: 'profesor'}})
+        }
       }else{
-        console.log("la contraseña o el usuario son incorrectos")
+        this.mensajeWarning="Contraseña o usuarios incorrectos!"
       }
     }else{
-      console.log("la contraseña o el usuario son incorrectos")
+      this.mensajeWarning="Contraseña o usuarios incorrectos!"
     }
   }
     // this.router.navigate(['dashboard'])

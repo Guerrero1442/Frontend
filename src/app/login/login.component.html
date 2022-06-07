@@ -1,14 +1,14 @@
 <div
-    class="container-fluid bg-light d-flex flex-column justify-content-center align-items-center"
-    style="height: 100vh"
+    class="container-fluid d-flex flex-column justify-content-center align-items-center"
+    style="height: 100vh; background-color: white"
 >
     <h1>{{ index }}</h1>
-    <div style="width: 30%" class="div bg-secondary text-center p-3">
+    <div style="width: 30%; background-color: #ffe6e6" class="div text-center p-3 border border-5">
         <h4>Periodo</h4>
     </div>
     <div
-        class="container p-4 border border-secondary d-flex flex-column justify-content-center"
-        style="width: 30%"
+        class="container p-4 border border-4 rounded-bottom d-flex flex-column justify-content-center"
+        style="width: 30%; border-color: #f2d1d1; background-color: #c6dce4"
     >
         <div class="form-floating mb-3">
             <input
@@ -30,9 +30,11 @@
             />
             <label for="floatingPassword">Password</label>
         </div>
+        <div class="alert alert-danger mt-3" role="alert">{{ mensajeWarning }}</div>
         <button
             type="button"
-            class="btn btn-danger py-1 px-5 rounded-pill mt-3 mx-auto"
+            class="btn btn-outline-light border border-5 fw-bold py-1 px-5 rounded-pill mt-3 mx-auto"
+            style="color: #f08080; border-color: #f08080"
             (click)="irDashboard()"
         >
             Login

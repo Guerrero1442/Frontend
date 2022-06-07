@@ -7,13 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
-import { PreguntasService } from './preguntas.service';
 import { CrearpreguntaComponent } from './crearpregunta/crearpregunta.component';
 import { ActualizapreguntaComponent } from './actualizapregunta/actualizapregunta.component';
-import { UserService } from './user.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.component';
-
+import { PreguntaServiceService } from './Services/Pregunta/pregunta-service.service';
+import { UserServiceService } from './Services/User/user-service.service';
+import { TusExamenesComponent } from './tus-examenes/tus-examenes.component';
+import { CrearExamenComponent } from './crear-examen/crear-examen.component';
+import { CalificarExamenComponent } from './calificar-examen/calificar-examen.component';
+import { ExamServiceService } from './Services/Exams/exam-service.service';
+import { ResponderExamenComponent } from './responder-examen/responder-examen.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.co
     PreguntasComponent,
     CrearpreguntaComponent,
     ActualizapreguntaComponent,
-    UsermodelComponent
+    TusExamenesComponent,
+    CrearExamenComponent,
+    CalificarExamenComponent,
+    ResponderExamenComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,7 @@ import { UsermodelComponent } from './models/Usuariomodel/usermodel/usermodel.co
     FormsModule,
     HttpClientModule
   ],
-  providers: [PreguntasService,UserService],
+  providers: [PreguntaServiceService,UserServiceService,ExamServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

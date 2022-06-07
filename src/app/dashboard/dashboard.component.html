@@ -1,4 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+</style>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c6dce4">
     <div class="container-fluid">
         <a href="dashboard" class="navbar-brand">Periodo</a>
         <ul class="navbar-nav">
@@ -6,39 +9,38 @@
                 <a href="" class="nav-link">Tus preguntas</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Tus examenes</a>
+                <a href="/tusexamenes" class="nav-link">Tus examenes</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="btn btn-primary"
+                    [routerLink]="['/nuevaPregunta']"
+                    [queryParams]="{ id_user: index }"
+                    >Crear pregunta</a
+                >
             </li>
         </ul>
     </div>
 </nav>
 
-<div
-    *ngFor="let pregunta of preguntas; let indice = index"
-    class="container mt-3"
-    style="width: 70%"
->
-    <div class="card">
-        <div class="card-header">{{ pregunta.materia }}</div>
-        <div class="card-body">
-            <h5 class="card-title">{{ pregunta.enunciado }}</h5>
-            <p class="card-text">
-                {{ pregunta.respuesta }}
-            </p>
-            <a
-                href="#"
-                [routerLink]="['/actualizaPregunta', indice]"
-                [queryParams]="{ id_user: index }"
-                class="btn btn-primary"
-                >Editar</a
-            >
-            <!-- <a href="#" class="btn btn-danger m-2">Eliminar</a> -->
+<div class="container" style="width: 40%; margin-top: 60px">
+    <div class="col-9 my-3" *ngFor="let pregunta of preguntas; let indice = index">
+        <div class="card">
+            <div class="card-header" style="background-color: #c6dce4">{{ pregunta.Subject }}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ pregunta.Enunciado }}</h5>
+                <p class="card-text">
+                    {{ pregunta.Answer }}
+                </p>
+                <a
+                    href="#"
+                    [routerLink]="['/actualizaPregunta', indice]"
+                    [queryParams]="{ id_user: index }"
+                    class="btn btn-primary border-2 fw-bold shadow-lg"
+                    >Editar</a
+                >
+                <!-- <a href="#" class="btn btn-danger m-2">Eliminar</a> -->
+            </div>
         </div>
     </div>
 </div>
-<a
-    href=""
-    class="btn btn-primary"
-    [routerLink]="['/nuevaPregunta']"
-    [queryParams]="{ id_user: index }"
-    >Crear pregunta</a
->

@@ -1,0 +1,40 @@
+<div class="row my-3">
+    <div class="col">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            [(ngModel)]="cuadroUsername"
+        />
+    </div>
+    <div class="col">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Materia"
+            aria-label="Materia"
+            [(ngModel)]="cuadroMateria"
+        />
+    </div>
+</div>
+<div
+    *ngFor="let pregunta of preguntas; let indice = index"
+    class="container mt-3"
+    style="width: 70%"
+>
+    <div class="card">
+        <div class="card-header">{{ pregunta.Subject }}</div>
+        <div class="card-body">
+            <h5 class="card-title">{{ pregunta.Enunciado }}</h5>
+            <p class="card-text">
+                {{ pregunta.Answer }}
+            </p>
+            <a class="btn btn-primary" (click)="agregarPreguntaExam(indice)">Agregar</a>
+            <!-- <a href="#" class="btn btn-danger m-2">Eliminar</a> -->
+        </div>
+    </div>
+</div>
+<button class="btn btn-dark" (click)="agregaExam()">Enviar</button>
+<button class="btn btn-primary" (click)="asignarPreguntas()">Aplicar</button>
+<h1>{{ contador }}</h1>

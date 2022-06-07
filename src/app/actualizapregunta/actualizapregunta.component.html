@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c6dce4">
     <div class="container-fluid">
         <a href="dashboard" class="navbar-brand">Periodo</a>
         <ul class="navbar-nav">
@@ -12,39 +12,30 @@
     </div>
 </nav>
 <div
-    class="container-fluid bg-secondary p-5 d-flex flex-column align-items-center justify-content-center"
-    style="height: 100vh"
+    class="container-fluid btn-light d-flex flex-column align-items-center"
+    style="height: 100vh; margin-top: 70px; background-color: white"
 >
-    <div style="width: 70%; height: auto" class="form">
-        <div class="row g-2">
-            <div class="col-md">
-                <div class="form-floating">
-                    <input
-                        type="text"
-                        [(ngModel)]="cuadroUsername"
-                        class="form-control"
-                        id="floatingInputGrid"
-                        placeholder="username"
-                        disabled="true"
-                    />
-                    <label for="floatingInputGrid">Username</label>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="form-floating">
-                    <input
-                        type="text"
-                        [(ngModel)]="cuadroMateria"
-                        class="form-control"
-                        id="floatingInputGrid"
-                        placeholder="username"
-                    />
-                    <label for="floatingInputGrid">Materia</label>
-                </div>
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Enunciado</label>
+    <div class="form-floating" style="width: 60%">
+        <input
+            type="text"
+            [(ngModel)]="cuadroUsername"
+            class="form-control"
+            id="floatingInputGrid"
+            placeholder="username"
+            disabled="true"
+            style="border-bottom: 0; background-color: #c6dce4"
+        />
+        <label for="floatingInputGrid">Username</label>
+    </div>
+
+    <div
+        style="width: 60%; height: auto; background-color: white"
+        class="form border rounded-start border-1 d-flex flex-column align-items-center p-3"
+    >
+        <div class="mb-3" style="width: 80%">
+            <label for="exampleFormControlTextarea1" class="form-label m-2 fw-bold"
+                >Enunciado</label
+            >
             <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
@@ -52,63 +43,99 @@
                 rows="3"
             ></textarea>
         </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                value="opcion1"
-                (click)="elegirRptCorrecta($event)"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion1" />
-            </label>
+        <div class="row g-2" style="width: 80%">
+            <div class="form-check mt-4 col">
+                <input
+                    class="form-check-input"
+                    style="background-color: #c6dce4"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                    value="opcion1"
+                    (click)="elegirRptCorrecta($event)"
+                />
+                <label class="form-check-label" for="flexRadioDefault1">
+                    <input
+                        type="text"
+                        style="background-color: white"
+                        class="border border-1 shadow-sm rounded"
+                        [(ngModel)]="cuadroOpcion1"
+                    />
+                </label>
+            </div>
+            <div class="col">
+                <div class="form-floating">
+                    <input
+                        type="text"
+                        [(ngModel)]="cuadroMateria"
+                        class="form-control"
+                        style="border: none; background-color: transparent"
+                        id="floatingInputGrid"
+                        placeholder="username"
+                    />
+                    <label for="floatingInputGrid">Materia</label>
+                </div>
+            </div>
         </div>
-        <div class="form-check">
+        <div class="form-check mb-2" style="width: 80%">
             <input
                 class="form-check-input"
                 type="radio"
+                style="background-color: #c6dce4"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 value="opcion2"
                 (click)="elegirRptCorrecta($event)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion2" />
+                <input
+                    type="text"
+                    style="background-color: white"
+                    class="border border-1 shadow-sm rounded"
+                    [(ngModel)]="cuadroOpcion2"
+                />
             </label>
         </div>
-        <div class="form-check">
+        <div class="form-check my-2" style="width: 80%">
             <input
                 class="form-check-input"
                 type="radio"
+                style="background-color: #c6dce4"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 value="opcion3"
                 (click)="elegirRptCorrecta($event)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion3" />
+                <input
+                    type="text"
+                    style="background-color: white"
+                    class="border border-1 shadow-sm rounded"
+                    [(ngModel)]="cuadroOpcion3"
+                />
             </label>
         </div>
-        <div class="form-check">
+        <div class="form-check my-2" style="width: 80%">
             <input
                 class="form-check-input"
                 type="radio"
+                style="background-color: #c6dce4"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 value="opcion4"
                 (click)="elegirRptCorrecta($event)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion4" />
+                <input
+                    type="text"
+                    style="background-color: white"
+                    class="border border-1 shadow-sm rounded"
+                    [(ngModel)]="cuadroOpcion4"
+                />
             </label>
         </div>
         <button type="submit" class="btn btn-primary m-3" (click)="actualizaPregunta()">
-            Crear
-        </button>
-        <button type="submit" class="btn btn-danger m-3" (click)="eliminaPregunta()">
-            Eliminar
+            Actualizar
         </button>
     </div>
 </div>

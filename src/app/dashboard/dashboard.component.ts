@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pregunta } from '../pregunta.model';
-import { PreguntasService } from '../preguntas.service';
-import { UserService } from '../user.service';
+import { Preguntamodel } from '../Models/Preguntamodel/preguntamodel';
+import { PreguntaServiceService } from '../Services/Pregunta/pregunta-service.service';
+import { UserServiceService } from '../Services/User/user-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +10,10 @@ import { UserService } from '../user.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  preguntas:Pregunta[]=[]
+  preguntas:Preguntamodel[]=[]
   index:number
   
-  constructor(private servicioPreguntas:PreguntasService,private route:ActivatedRoute,private servicioUsuario:UserService) { 
+  constructor(private servicioPreguntas:PreguntaServiceService,private route:ActivatedRoute,private servicioUsuario:UserServiceService) { 
     // this.preguntas=this.servicioPreguntas.preguntas
   }
 
