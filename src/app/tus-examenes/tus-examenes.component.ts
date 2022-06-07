@@ -16,11 +16,19 @@ export class TusExamenesComponent implements OnInit {
     this.rol=this.route.snapshot.queryParams['rol']
     this.examenes=this.examenService.examenes
     this.cambiosVariablesHTML()
+    if(this.rol=='profesor'){
+      this.esProfesor=true
+    }else{
+      this.esProfesor=false
+    }
+  
   }
 
   accionBtn:string=""
   crearExam:string=""
   rol:string
+  tusPreguntas:string="tusPreguntas"
+  esProfesor:boolean=false
 
   examenes:Exammodel[]=[]
   index:number
@@ -35,6 +43,8 @@ export class TusExamenesComponent implements OnInit {
       this.crearExam="Crear examen"
     }
   }
+
+
 
   realizarExam(indexExam:number){
     this.router.navigate(['responderExam'],{queryParams:{id_user: this.index,rol: 'profesor',id_Exam: indexExam}})

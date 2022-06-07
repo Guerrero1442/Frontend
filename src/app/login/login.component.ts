@@ -21,7 +21,8 @@ export class LoginComponent implements OnInit {
   capturaPassword:string="boca"
   // resultado:number=this.usuarios.findIndex(User => User === "lhuer2")
   index:number
-  mensajeWarning:string=""
+  mensajeWarning:string="Usuario o contraseña incorrectos!"
+  noRegistrado:boolean=false
 
   irDashboard(){
     this.index = this.usuarios.findIndex((user)=> user.Username === this.capturaUsername)
@@ -33,12 +34,14 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['dashboard'],{queryParams:{id_user: this.index,rol: 'profesor'}})
         }
       }else{
-        this.mensajeWarning="Contraseña o usuarios incorrectos!"
+        this.noRegistrado=true
+
       }
     }else{
-      this.mensajeWarning="Contraseña o usuarios incorrectos!"
+      this.noRegistrado=true
     }
   }
+
     // this.router.navigate(['dashboard'])
 }
 

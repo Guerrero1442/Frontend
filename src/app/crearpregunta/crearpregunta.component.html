@@ -44,7 +44,7 @@
             ></textarea>
         </div>
         <div class="row g-2 d-flex align-items-end" style="width: 80%">
-            <div class="form-check mb-3 col">
+            <div class="form-check mt-4 col mb-3">
                 <input
                     class="form-check-input"
                     style="background-color: #c6dce4"
@@ -61,51 +61,24 @@
                         class="border border-1 shadow-sm rounded"
                         [(ngModel)]="cuadroOpcion1"
                     />
-                   
                 </label>
-            
-                <label for="floatingInputGrid">Autor</label>
             </div>
-        
-        </div>
-        <div class="col">
-            <label for="exampleFormControlTextarea1" class="form-label m-2 fw-bold">Materia</label>
-            <div class="form-floating">
-                <input
-                    type="text"
-                    [(ngModel)]="cuadroMateria"
-                    class="form-control"
-                    id="floatingInputGrid"
-                    placeholder="username"
-                />
+            <div class="col">
+                <label for="exampleFormControlTextarea1" class="form-label m-2 fw-bold"
+                    >Materia</label
+                >
+                <div class="form-floating">
+                    <input
+                        type="text"
+                        [(ngModel)]="cuadroMateria"
+                        class="form-control"
+                        id="floatingInputGrid"
+                        placeholder="username"
+                    />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-check mb-2" style="width: 80%">
-   
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Enunciado</label>
-            <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                [(ngModel)]="cuadroEnunciado"
-                rows="3"
-            ></textarea>
-        </div>
-        <div class="form-check">
-            <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                value="opcion1"
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-                <input type="text" [(ngModel)]="cuadroOpcion1" />
-            </label>
-        </div>
-        <div class="form-check">
-            
+        <div class="form-check mb-2" style="width: 80%">
             <input
                 class="form-check-input"
                 type="radio"
@@ -113,6 +86,7 @@
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 value="opcion2"
+                (click)="elegirRptCorrecta($event)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
                 <input
@@ -131,6 +105,7 @@
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 value="opcion3"
+                (click)="elegirRptCorrecta($event)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
                 <input
@@ -149,6 +124,7 @@
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 value="opcion4"
+                (click)="elegirRptCorrecta($event)"
             />
             <label class="form-check-label" for="flexRadioDefault1">
                 <input
@@ -159,13 +135,6 @@
                 />
             </label>
         </div>
-        <button
-            type="submit"
-            class="btn btn-primary m-3 justify-content-center"
-            style="width: 30%"
-            (click)="agregaPregunta()"
-        >
-            Crear
-        </button>
+        <button type="submit" class="btn btn-primary m-3" (click)="agregaPregunta()">Crear</button>
     </div>
 </div>

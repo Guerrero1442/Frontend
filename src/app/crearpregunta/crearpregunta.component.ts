@@ -30,7 +30,7 @@ export class CrearpreguntaComponent implements OnInit {
      }
    }
   index:number
-  cuadroUsername:string=""
+  cuadroUsername:string
   cuadroMateria:string=""
   cuadroEnunciado:string=""
   cuadroOpcion1:string=""

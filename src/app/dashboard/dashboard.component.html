@@ -8,16 +8,11 @@
             <li class="nav-item">
                 <a href="/dashboard" class="nav-link">Tus preguntas</a>
             </li>
-            <li class="nav-item">
-                <a href="/tusexamenes" class="nav-link">Tus examenes</a>
+            <li class="nav-item link">
+                <a class="nav-link" (click)="irtusExamenes()">Tus examenes</a>
             </li>
             <li class="nav-item">
-                <a
-                    class="btn btn-primary"
-                    [routerLink]="['/nuevaPregunta']"
-                    [queryParams]="{ id_user: index }"
-                    >Crear pregunta</a
-                >
+                <a class="btn btn-primary" (click)="irNuevapregunta()">Crear pregunta</a>
             </li>
         </ul>
     </div>
@@ -28,7 +23,7 @@
         <div class="card">
             <div class="card-header" style="background-color: #c6dce4">{{ pregunta.subject }}</div>
             <div class="card-body">
-                <h5 class="card-title">{{ pregunta.statement}}</h5>
+                <h5 class="card-title">{{ pregunta.statement }}</h5>
                 <p class="card-text">
                     {{ pregunta.answer }}
                 </p>
